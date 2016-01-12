@@ -44,8 +44,9 @@
         <div data-options="iconCls:'icon-large-shapes'   ">เพิ่มข้อมูล ComboBox</div>
         <div class="menu-sep"></div>
         <div> - เพิ่ม Indication</div>
-
-        
+        <div> - เพิ่ม Reason for TDM</div>
+        <div> - เพิ่ม Drug level requested</div>
+        <div> - เพิ่ม Add Current Medications</div>
         <!--
         <div>
             <span>Toolbar</span>
