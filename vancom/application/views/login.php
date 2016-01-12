@@ -5,10 +5,10 @@
     <title><?=$titlelogin?></title>
     
     
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/reset.css">
 
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/style.css">
 
     
     
@@ -20,7 +20,7 @@
       <?=form_open("welcome/checklogin")?>
     <div class="wrap">
 		<div class="avatar">
-      <img src="img/KKU.png">
+      <img src="<?=base_url()?>img/KKU.png">
 		</div>
         <input type="text" placeholder="username" required  maxlength="10">
 		<div class="bar">
@@ -31,7 +31,7 @@
 		<button>Sign in</button>
 	</div>
     
-        <script src="js/index.js"></script>
+        <script src="<?=base_url()?>js/index.js"></script>
         <?=form_close()?>
         
 
