@@ -90,7 +90,7 @@
                  closable:true,
                  resizable:true,
                  "
-                 style="width:700px;height:500px;padding:10px;">
+                 style="width:900px;height:700px;padding:10px;">
             
             
             
@@ -166,6 +166,174 @@
         <option value="2">ESRD S/P HD</option>
         <option value="3">TVD</option>
                            </select>
+                    </td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>
+                        Underllying disease 1 :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                        Underllying disease 6 :
+                        
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td>
+                        Underllying disease 2 :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                        Underllying disease 7 :
+                        
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                    </td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>
+                        Underllying disease 3 :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                        Underllying disease 8 :
+                        
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>
+                        Underllying disease 4 :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                        Underllying disease 9 :
+                        
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                    </td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>
+                        Underllying disease 5 :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                        Underllying disease 10 :
+                        
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">AFI</option>
+        <option value="2">ESRD S/P HD</option>
+        <option value="3">TVD</option>
+                           </select>
+                        
+                    </td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>
+                       Reason for TDM :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">Routine Follow up</option>
+        
+       
+                           </select>
+                        
+                          <a href="javascript:void(0)" class="easyui-linkbutton" data-options="  iconCls:' icon-large-shapes '  " >Add Reason for TDM</a>
+                        
+                    </td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>
+                       Drug level requested :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">Vancomycin</option>
+        
+       
+                           </select>
+                        
+                          <a href="javascript:void(0)" class="easyui-linkbutton" data-options="  iconCls:' icon-large-shapes '  " >Add Drug level requested</a>
+                        
+                    </td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <td>
+                       Current Medications :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">ceftazidime 2 g IV OD. (Start: 30/1/2558)</option>
+         <option value="2">Vancomycin 1 g in D5W 200 ml IV drip in 2 hr. q. 12 hr.(22.00) (Start : 30/10/2558)</option>
+       
+                           </select>
+                        
+                     
+                        
+                          <a href="javascript:void(0)" class="easyui-linkbutton" data-options="  iconCls:' icon-large-shapes '  " >Add Current Medications</a>
+                        
                     </td>
                 </tr>
                 
