@@ -36,6 +36,21 @@ class Welcome extends CI_Controller {
                                      $this->load->view("home",$data);
                                      
                  }
+                 public function  dg_patient() //ประวัติของผู้ป่วย
+                 {
+
+                     # http://127.0.0.1/vancom/index.php/welcome/dg_patient
+                           
+                        $tb="tb_patient";
+                        $query = $this->db->get($tb, 10, 0);
+                        $rows=array();
+                        foreach( $query->result() as $row  )
+                        {
+                                $rows[]=$row;
+                        }
+                         echo json_encode($rows);
+                               
+                 }
 }
 
 /* End of file welcome.php */

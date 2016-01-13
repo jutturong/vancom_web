@@ -6,7 +6,7 @@
 <div style="margin:10px 0;"></div>
     <div class="easyui-panel" style="padding:5px;">
         <!--<a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-large-clipart'  "><?=$head?></a>-->
-         <a href="#" class="easyui-linkbutton" iconCls="icon-large-clipart">ผู้ป่วยทั้งหมด/ประวัติการรักษา</a>
+         <a href="#" class="easyui-menubutton"     data-options="menu:'#mm8'   "    iconCls="icon-large-clipart"   >ประวัติผู้ป่วย/ประวัติการรักษา</a>
          
          <a href="#" class="easyui-menubutton"  data-options=" menu:'#mm7' ,iconCls:'icon-man'   "   >เกี่ยวกับผู้ป่วย</a>
        
@@ -25,7 +25,35 @@
         <a href="<?=base_url()?>index.php/welcome/index/" class="easyui-linkbutton" iconCls="icon-cancel">Sign Out</a>
     </div>
     
-    
+   
+ <div id="mm8" style="width:150px;">
+        <!--<div data-options="iconCls:'icon-add'">เพิ่มชื่อผู้ป่วย</div>-->
+       <!--<div data-options="iconCls:'icon-add'">Tool เกี่ยวกับผู้ป่วย</div> -->
+       
+        <div class="menu-sep"></div>
+        <div   onclick="javascript:$('#p_patient').panel('open')"   data-options=" iconCls:'icon-reload'   " >Open </div>
+        <div class="menu-sep"></div>
+        <div    onclick="javascript:$('#p_patient').panel('close')"  data-options=" iconCls:' icon-remove'   ">Close</div>
+        
+        <!--
+        <div  >
+            <span>ลบ/แก้ไข</span>
+            <div>
+                <div>แก้ไข/ลบ ประวัติผู้ป่วย</div>
+                <div class="menu-sep"></div>
+                <div>แก้ไข/ลบ ประวัติการรักษา</div>
+              
+                
+                <div>New Toolbar...</div>
+            </div>
+        </div>
+        -->
+        
+        <!--<div data-options="iconCls:'icon-remove'">Delete</div>
+        <div>Select All</div>-->
+    </div>
+
+
  <div id="mm7" style="width:150px;">
         <!--<div data-options="iconCls:'icon-add'">เพิ่มชื่อผู้ป่วย</div>-->
        <!--<div data-options="iconCls:'icon-add'">Tool เกี่ยวกับผู้ป่วย</div> -->
