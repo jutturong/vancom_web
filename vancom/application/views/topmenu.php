@@ -1,12 +1,19 @@
- <div style="margin:10px 0;"></div>
+       <img src="<?=base_url()?>img/KKU.png" style="width:40px;height:40px">   
+       <p style="font-size:14px;color:#444;"><h1><?=$title?></h1></p> 
+       
+       
+
+<div style="margin:10px 0;"></div>
     <div class="easyui-panel" style="padding:5px;">
-        <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-large-clipart'  "><?=$head?></a>
-         <a href="#" class="easyui-linkbutton" iconCls="icon-large-picture">ผู้ป่วยทั้งหมด/ประวัติการรักษา</a>
+        <!--<a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-large-clipart'  "><?=$head?></a>-->
+         <a href="#" class="easyui-linkbutton" iconCls="icon-large-clipart">ผู้ป่วยทั้งหมด/ประวัติการรักษา</a>
+         <a href="#" class="easyui-linkbutton" iconCls="icon-large-shapes" onclick="op_diagnosis()">เพิ่มประวัติการรักษา</a>
         <a href="#" class="easyui-menubutton" data-options="menu:'#mm1',iconCls:'icon-edit'">Tool (ข้อมูลต่างๆ)</a>
         
          <a href="#" class="easyui-menubutton" data-options="menu:'#mm5',iconCls:'icon-add'">Add ComboBox (เพิ่มข้อมูล)</a>
         
         <a href="#" class="easyui-menubutton" data-options="menu:'#mm4',iconCls:'icon-large-picture'">Report</a>
+          <a href="#" class="easyui-menubutton" data-options="menu:'#mm6', iconCls:' icon-large-smartart '  ">Graph</a>
         <a href="#" class="easyui-menubutton" data-options="menu:'#mm2',iconCls:'icon-help'">Help</a>
        <!-- <a href="#" class="easyui-menubutton" data-options="menu:'#mm3'">ออกจากระบบ</a> -->
         <a href="<?=base_url()?>index.php/welcome/index/" class="easyui-linkbutton" iconCls="icon-cancel">Sign Out</a>
@@ -20,6 +27,7 @@
         <div data-options="iconCls:'icon-add'">Tool เกี่ยวกับผู้ป่วย</div>
         <div class="menu-sep"></div>
         <div onclick="op_addpatien()" data-options=" iconCls:'icon-man'   " >เพิ่มประวัติผู้ป่วย</div>
+        
         <div onclick="op_diagnosis()"  data-options=" iconCls:' icon-large-shapes'   ">เพิ่มประวัติการรักษา</div>
         
         <div class="menu-sep"></div>
@@ -47,6 +55,32 @@
         <div> - เพิ่ม Reason for TDM</div>
         <div> - เพิ่ม Drug level requested</div>
         <div> - เพิ่ม Add Current Medications</div>
+        <!--
+        <div>
+            <span>Toolbar</span>
+            <div>
+                <div>Address</div>
+                <div>Link</div>
+                <div>Navigation Toolbar</div>
+                <div>Bookmark Toolbar</div>
+                <div class="menu-sep"></div>
+                <div>New Toolbar...</div>
+            </div>
+        </div>
+        -->
+        
+        <!--
+        <div data-options="iconCls:'icon-remove'">Delete</div>
+        <div>Select All</div>
+        -->
+    </div>
+ 
+ <div id="mm6" style="width:150px;">
+        <!--<div data-options="iconCls:'icon-add'">เพิ่มชื่อผู้ป่วย</div>-->
+        <div data-options="iconCls:'icon-large-shapes'   ">ระบุชนิด graph</div>
+        <div class="menu-sep"></div>
+        <div>อายุ-น้ำหนัก</div>
+
         <!--
         <div>
             <span>Toolbar</span>

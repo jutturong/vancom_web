@@ -22,11 +22,11 @@
 		<div class="avatar">
       <img src="<?=base_url()?>img/KKU.png">
 		</div>
-        <input type="text" placeholder="username" required  maxlength="10">
+        <input type="text" placeholder="username" required  maxlength="10" value="ศิริลักษณ์">
 		<div class="bar">
 			<i></i>
 		</div>
-		<input type="password" placeholder="password" required maxlength="10">
+        <input type="password" placeholder="password" required maxlength="10" value="jumkku">
 		<!--<a href="" class="forgot_link">forgot ?</a>-->
 		<button>Sign in</button>
 	</div>

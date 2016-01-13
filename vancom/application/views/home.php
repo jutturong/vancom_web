@@ -86,11 +86,11 @@
 <!-- เพิ่มประวัติการรักษา -->
         <div id="add_diagnosis" class="easyui-window" title=" เพิ่มประวัติประวัติการรักษา (Therapeutic Drug Monitoring) "    data-options="
                  modal:true,closed:true,
-                 iconCls:'icon-man',
+                 iconCls:' icon-large-shapes ',
                  closable:true,
                  resizable:true,
                  "
-                 style="width:900px;height:700px;padding:10px;">
+                 style="width:950px;height:750px;padding:10px;">
             
             
             
@@ -100,7 +100,7 @@
                        <tr>
                     <td>HN :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:true"  style="  width:100px;height:30px  "></input>
+                        <input class="easyui-textbox" type="text" name="name" data-options="required:true,iconCls:'icon-man'  "  style="  width:100px;height:30px  "></input>
                          
                     </td>
                 </tr>
@@ -108,11 +108,18 @@
                 <tr>
                     <td>Patient's Name - Lastname :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:true"  style="  width:150px;height:30px  "></input>
-                         <input class="easyui-textbox" type="text" name="name" data-options="required:true"  style="  width:200px;height:30px  "></input>
+                        <input class="easyui-textbox" type="text" name="name" data-options="required:true, iconCls:' icon-lock '   "  style="  width:150px;height:30px  "></input>
+                         <input class="easyui-textbox" type="text" name="name" data-options="required:true , iconCls:'icon-lock'  "  style="  width:200px;height:30px  "></input>
                     </td>
                 </tr>
                 
+                <tr>
+                    <td>Age :</td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="name" data-options="required:true,iconCls:'icon-lock '  "  style="  width:100px;height:30px  "></input>
+                         
+                    </td>
+                </tr>
                 
                 <tr>
                     <td>Ward :</td>
@@ -338,12 +345,150 @@
                 </tr>
                 
                 
+                <tr>
+                    <td>
+                       Laboratory Data (within 5 day) :
+                    </td>
+                    <td>
+                        <select class="easyui-combobox" name="state" style="width:200px;height: 30px;">
+        <option value="1">Creatinine 5.0 mg/dL</option>
+         <option value="2">Creatinine 6.8 mg/dL</option>
+       <option value="3">Creatinine 6.7 mg/dL</option>
+                           </select>
+                        
+                     Date Labotory Data
+                        
+                          <input class="easyui-datebox" style="height: 30px"  data-options="required:true" ></input>
+                        
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>
+                       Date Sampling results (within 2 weeks) :
+                    </td>
+                    <td>
+                       
+                        
+                    
+                        
+                          <input class="easyui-datetimebox" style="height: 30px"  data-options="required:true" ></input>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                       Date Administration Time :
+                    </td>
+                    <td>
+                       
+                        
+                    
+                        
+                          <input class="easyui-datetimebox" style="height: 30px"  data-options="required:true" ></input>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                       Measured level :
+                    </td>
+                    <td>
+
+                          <input class="easyui-numberbox" precision="2" value="234.56" style="width:100px;"></input>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" >
+                         Pharmacokinetic parameters :
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                       Vd :
+                    </td>
+                    <td>
+                         <input class="easyui-numberbox" precision="2" value="49.00" style="width:70px;"></input>
+                         Litre
+                         <?=nbs(4)?>
+                         Cl :
+                         <input class="easyui-numberbox" precision="4" value="0.01000" style="width:70px;"></input>
+                         L/hr
+                    </td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>
+                       ke :
+                    </td>
+                    <td>
+                         <input class="easyui-numberbox" precision="2" value="49.00" style="width:70px;"></input>
+                         hr-1
+                         <?=nbs(4)?>
+                         Half-life :
+                         <input class="easyui-numberbox" precision="4" value="0.01000" style="width:70px;"></input>
+                         hr
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td>Assessment :</td>
+                    <td><input class="easyui-textbox" data-options="iconCls:'icon-add'" style="width:250px;height: 30px"></input></td>
+                </tr>
+                
+                
+                <tr>
+                    <td>Interpretation and Recommendation :</td>
+                    <td><input class="easyui-textbox" data-options="iconCls:'icon-add',multiline:true  " style="width:400px;height: 50px"></input></td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>Note :</td>
+                    <td><input class="easyui-textbox" data-options="iconCls:'icon-add',multiline:true  " style="width:400px;height: 50px"></input></td>
+                </tr>
+                
+                   <tr>
+                    <td>Pharmacist :</td>
+                    <td>
+                        <input class="easyui-textbox" data-options="iconCls:'icon-man'  "  value="ภญ.ปฐมา โสภาช"  style="width:200px;height: 30px" ></input>
+                        /
+                        <input class="easyui-textbox" data-options="iconCls:'icon-man'  "   value="ภญ.ศิริลักษณ์ ใจซื่อ"  style="width:200px;height: 30px" ></input>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Tel :</td>
+                    <td>
+                        <input class="easyui-numberbox"  value="11967"  style="width:100px;height: 30px" ></input>
+                   
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>Date :</td>
+                    <td>
+                        <input class="easyui-datebox" data-options="required:true" style="height: 30px;"></input>
+                   
+                    </td>
+                </tr>
+                
+                
                  <tr>
                     <td colspan="2">
-                          <a href="javascript:void(0)" class="easyui-linkbutton" data-options=" iconCls:'icon-add' " >Insert</a>
+                          <a href="javascript:void(0)" class="easyui-linkbutton" data-options=" iconCls:'icon-large-shapes' " >Insert</a>
                           <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-cancel'   "  onclick="$('#add_diagnosis').window('close')   "  >Close</a>
                     </td>
                 </tr>
+                
+                
                 
                     </table>
                 </form>
