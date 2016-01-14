@@ -15,7 +15,28 @@
                        <tr>
                     <td>HN :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:true,iconCls:'icon-man'  "  style="  width:100px;height:30px  "></input>
+                        
+                        <!--<input class="easyui-textbox" type="text" name="name" data-options="required:true,iconCls:'icon-man'  "  style="  width:100px;height:30px  ">-->
+                                <select class="easyui-combogrid" style="width:150px;height: 40px" data-options="
+            panelWidth: 300,
+            idField: 'itemid',
+            textField: 'HN_diagnosis',
+            mode:'remote',
+            idField:'HN',
+            url: '<?=base_url()?>index.php/welcome/cmb_hn/',
+            method: 'post',
+            columns: [[
+                {field:'HN',title:'HN'},
+                {field:'Name',title:'Name'},
+                {field:'Surname',title:'Lastname'},
+                  {field:'Sex',title:'Sex'},
+                
+            ]],
+            fitColumns: true,
+            iconCls:'icon-man'
+                              " />
+                        
+                        </input>
                          
                     </td>
                 </tr>

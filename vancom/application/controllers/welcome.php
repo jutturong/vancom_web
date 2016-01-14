@@ -51,6 +51,20 @@ class Welcome extends CI_Controller {
                          echo json_encode($rows);
                                
                  }
+                 public function cmb_hn() //ค้น HN ของ ผู้ป่วย
+                 {
+                      //  http://127.0.0.1/vancom/index.php/welcome/cmb_hn
+                       $q = isset($_POST['q']) ? strval($_POST['q']) : '';
+                        $tb="tb_patient";
+                        $this->db->like("HN",$q);
+                        $query = $this->db->get($tb, 10, 0);
+                        $rows=array();
+                         foreach( $query->result() as $row  )
+                        {
+                                $rows[]=$row;
+                        }
+                         echo json_encode($rows);
+                 }
 }
 
 /* End of file welcome.php */
