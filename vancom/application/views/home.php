@@ -6,7 +6,14 @@
         
         <?=$this->load->view("import_js")?>
         
+        
         <script type="text/javascript">
+            $(function(){  //แสดงรายการทั้งหมด ประวัติผู้ป่วย/ประวัติการรักษา
+                   $('#p_patient').panel('close');
+            });
+              
+            
+            
                 function  op_addpatien() //เพิ่มประวัติของผู้ป่วย
                 {
                        $('#add_patient').window('open');
@@ -26,9 +33,12 @@
       <!--  ผู้ป่วยทัังหมด/ประวัติการรักษา   -->  
       <div style="padding:10px 60px 20px 60px"></div>
     <div id="p_patient" class="easyui-panel" title=" แสดงรายการทั้งหมด ประวัติผู้ป่วย/ประวัติการรักษา "  
-         data-options=" iconCls:'icon-man' ,    tools:'#t_patient'  
+         data-options=" iconCls:'icon-man' ,  
+                                     tools:'#t_patient'  ,
+                                     closable:true ,
+                                     maximizable:true ,
                                     "  
-         style="width:500px;height:450px;padding:10px;">
+         style="width:450px;height:450px;padding:10px;">
         <!-- <p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p> -->
         
             <table class="easyui-datagrid" style="width:400px;height:400px"

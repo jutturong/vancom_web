@@ -1,13 +1,4 @@
-<script type="text/javascript">
-     /*
-             $('#HN_dia').combogrid({
-                 onSelect:function(index,row)
-                      {
-                          alert('test HN');
-                      }
-             });
-    */
-</script>
+
 
 <!-- เพิ่มประวัติการรักษา -->
         <div id="add_diagnosis" class="easyui-window" title=" เพิ่มประวัติประวัติการรักษา (Therapeutic Drug Monitoring) "    data-options="
