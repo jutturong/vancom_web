@@ -1,3 +1,14 @@
+<script type="text/javascript">
+     /*
+             $('#HN_dia').combogrid({
+                 onSelect:function(index,row)
+                      {
+                          alert('test HN');
+                      }
+             });
+    */
+</script>
+
 <!-- เพิ่มประวัติการรักษา -->
         <div id="add_diagnosis" class="easyui-window" title=" เพิ่มประวัติประวัติการรักษา (Therapeutic Drug Monitoring) "    data-options="
                  modal:true,closed:true,
@@ -17,10 +28,10 @@
                     <td>
                         
                         <!--<input class="easyui-textbox" type="text" name="name" data-options="required:true,iconCls:'icon-man'  "  style="  width:100px;height:30px  ">-->
-                                <select class="easyui-combogrid" style="width:150px;height: 40px" data-options="
+                        <select class="easyui-combogrid" id="HN_dia" name="HN_dia" style="width:150px;height: 40px" data-options="
             panelWidth: 300,
-            idField: 'itemid',
-            textField: 'HN_diagnosis',
+            idField: 'HN',
+            textField: 'HN',
             mode:'remote',
             idField:'HN',
             url: '<?=base_url()?>index.php/welcome/cmb_hn/',
@@ -33,7 +44,30 @@
                 
             ]],
             fitColumns: true,
-            iconCls:'icon-man'
+            onSelect:function(index,row)
+            {   
+                   //alert(index + row['HN']   );
+                   //alert( row['HN']   );
+                    $('#name_dia').textbox({
+                               //  value:row.HN,
+                                 value:row['Name'] ,
+                                 iconCls:'icon-man',
+                                 readonly:'true',
+                                 
+                                                             });
+                    $('#lastname_dia').textbox({
+                              value:row.Surname,
+                              iconCls:'icon-man',
+                              readonly:'true',
+                                                                    });
+                        $('#sex_dia').textbox({
+                             value:row.Sex,
+                             iconCls:'icon-man',
+                             readon:'true',
+                             
+                        });                                            
+             }
+           
                               " />
                         
                         </input>
@@ -44,8 +78,16 @@
                 <tr>
                     <td>Patient's Name - Lastname :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:true, iconCls:' icon-lock '   "  style="  width:150px;height:30px  "></input>
-                         <input class="easyui-textbox" type="text" name="name" data-options="required:true , iconCls:'icon-lock'  "  style="  width:200px;height:30px  "></input>
+                        <input class="easyui-textbox" type="text" name="name_dia" id="name_dia"  data-options="required:true, iconCls:' icon-lock '   "  style="  width:150px;height:30px  "></input>
+                         <input class="easyui-textbox" type="text" name="lastname_dia" id='lastname_dia'  data-options="required:true , iconCls:'icon-lock'  "  style="  width:200px;height:30px  "></input>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Sex :</td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="sex_dia"  id="sex_dia"  data-options="required:true,iconCls:'icon-lock '  "  style="  width:100px;height:30px  "></input>
+                         
                     </td>
                 </tr>
                 

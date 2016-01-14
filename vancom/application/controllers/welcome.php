@@ -22,24 +22,170 @@ class Welcome extends CI_Controller {
                 var  $title="Faculty of Pharmaceutical Science KKU";
               //  var  $head="Therapeutic Drug Monitoring Report";
                  var  $head="รายการหลัก";
+                 
+                   function __construct()
+                    {
+                        // Call the Model constructor
+                          parent::__construct();
+                          $this->load->model('authentication');
+                    }
+    
+    
+    
 	public function index()
 	{
 		//$this->load->view('welcome_message');
                                    //  $data["titlelogin"]="Login Faculty of Pharmaceutical Science KKU";
                                       $data["titlelogin"]=$this->Logintitle;
+                                      
+                                           $arr_login=array(
+                                                'sess_UserName'=>"",
+                                                'sess_UserSurname'=>"",
+                                                'sess_UserType'=>"",
+                                                'sess_UserCode'=>"",
+                                                'sess_Unused'=>"",
+                                                'sess_status_login'=>0,
+                                            );
+                                       $this->session->set_userdata($arr_login);
+                                       
+                                         /*
+                                           $data['sess_UserName']=$this->session->userdata('sess_UserName');
+                                              //echo "<br>";
+                                              
+                                              $data['sess_UserSurname']=$this->session->userdata('sess_UserSurname');
+                                             // echo "<br>";
+                                              
+                                              $data['sess_UserType']=$this->session->userdata('sess_UserType');
+                                             // echo "<br>";
+                                              
+                                              $data['sess_UserCode']=$this->session->userdata('sess_UserCode');
+                                             // echo "<br>";
+                                              
+                                              $data['sess_Unused']=$this->session->userdata('sess_Unused');
+                                             // echo "<br>";
+                                              
+                                              $this->session->userdata('sess_status_login');  //check  authentication
+                                            */  
+
                                      $this->load->view("login",$data);
 	}
                  public function checklogin()
                  {
-                                     $data['title']=$this->title;
-                                     $data['head']=$this->head;
-                                     $this->load->view("home",$data);
+                     echo'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+                              $data['title']=$this->title;
+                              $data['head']=$this->head;
+                                               
+                                     $tb="user";
+                                      $UserName=$this->input->get_post("username");
+                                 // echo "<br>";
+                                     $Password=$this->input->get_post("password");
+                                //  echo "<br>";
+                                     //echo "<br>";
+                                     /*
+                                      SELECT *
+SELECT *
+FROM `user`
+WHERE `Password` = "JUMKKU"
+LIMIT 0 , 30
+                                      * 
+                                      11313 	4 	ศิริลักษณ์ 	ใจซื่อ 	jumkku 	1 	N 	N
+                                          UserCode
+                                      * Title
+                                      * UserName
+                                      * UserSurname
+                                      * Password
+                                      * UserType
+                                      * Login
+                                      * Unused
+                                      */
+                                   $query=$this->db->get_where($tb,array("UserName"=>$UserName, "Password"=>$Password ,"Unused"=>"N"  ));
+                                    $check=$query->num_rows();
+                                  //echo "<br>";
+                                   if( $check != 1 )
+                                   {
+                                       
+                                              // $this->load->view("login",$data);
+                                            // $this->authentication->check_authentication();
+                                       
+                                                 $arr_login=array(
+                                                'sess_UserName'=>"",
+                                                'sess_UserSurname'=>"",
+                                                'sess_UserType'=>"",
+                                                'sess_UserCode'=>"",
+                                                'sess_Unused'=>"",
+                                                'sess_status_login'=> "",
+                                            );
+                                                
+                                                     $this->session->set_userdata($arr_login);
+                                                     
+                                                     
+                                               redirect('welcome');
+                                               
+                                   }
+                                  else  if( $check == 1 )
+                                   {    
+                                            foreach($query->result() as $row )
+                                            {
+                                                     $UserType=$row->UserType ;  //1=admin
+                                                   //echo  "<br>";
+                                                     $Unused=$row->Unused;   // 2=บุคคลทั่วไป
+                                                   // echo  "<br>";
+                                                   $UserSurname=$row->UserSurname;  //นามสกุล
+                                                    //echo  "<br>";
+                                                   $UserCode=$row->UserCode;  //เลขที่ตำแหน่ง
+                                                   // echo  "<br>";
+
+                                            }
+                                            
+                                            $arr_login=array(
+                                                'sess_UserName'=>$UserName,
+                                                'sess_UserSurname'=>$UserSurname,
+                                                'sess_UserType'=>$UserType,
+                                                'sess_UserCode'=>$UserCode,
+                                                'sess_Unused'=>$Unused,
+                                                'sess_status_login'=> $check,
+                                            );
+                                            $this->session->set_userdata($arr_login);
+                                            
+                                             // $data['sess_username']=$this->session->userdata('sess_username'); //ชื่อผู้สัมภาษณ์
+                                               $data['sess_UserName']=$this->session->userdata('sess_UserName');
+                                              //echo "<br>";
+                                              
+                                              $data['sess_UserSurname']=$this->session->userdata('sess_UserSurname');
+                                             // echo "<br>";
+                                              
+                                              $data['sess_UserType']=$this->session->userdata('sess_UserType');
+                                             // echo "<br>";
+                                              
+                                              $data['sess_UserCode']=$this->session->userdata('sess_UserCode');
+                                             // echo "<br>";
+                                              
+                                              $data['sess_Unused']=$this->session->userdata('sess_Unused');
+                                             // echo "<br>";
+                                              
+                                              $data['sess_status_login']=$this->session->userdata('sess_status_login');  //check  authentication
+                                             // echo "<br>";
+                                              
+                                            
+                                             //  $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม
+                                             
+                                              $this->load->view("home",$data);
+                                                      
+                                   }  
+            
                                      
                  }
+                 
+                 
+                 
+                 
+                 
+                 
                  public function  dg_patient() //ประวัติของผู้ป่วย
                  {
 
                      # http://127.0.0.1/vancom/index.php/welcome/dg_patient
+                           $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม
                            
                         $tb="tb_patient";
                         $query = $this->db->get($tb, 10, 0);
@@ -54,6 +200,7 @@ class Welcome extends CI_Controller {
                  public function cmb_hn() //ค้น HN ของ ผู้ป่วย
                  {
                       //  http://127.0.0.1/vancom/index.php/welcome/cmb_hn
+                        $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม
                        $q = isset($_POST['q']) ? strval($_POST['q']) : '';
                         $tb="tb_patient";
                         $this->db->like("HN",$q);
@@ -65,6 +212,8 @@ class Welcome extends CI_Controller {
                         }
                          echo json_encode($rows);
                  }
+                
+                         
 }
 
 /* End of file welcome.php */
