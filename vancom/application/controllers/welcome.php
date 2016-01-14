@@ -188,7 +188,50 @@ LIMIT 0 , 30
                            $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม
                            
                         $tb="tb_patient";
-                        $query = $this->db->get($tb, 10, 0);
+                      
+                        /*
+                        $page=$this->input->get_post('page');
+                        $rows=$this->input->get_post('rows');
+                */
+                        
+                         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+                         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+
+
+                        /*
+                        if( $page == ""  ||  $rows == ""  )
+                        {
+                         $query = $this->db->get($tb, 10, 0);
+                       //$query = $this->db->get($tb);
+                        }
+                          elseif( $page > 0  &&  $rows > 0 )
+                          {
+                                 $query = $this->db->get($tb, 10, $rows );
+                              
+                          }
+                         */
+                        
+                        $section=$page*10;
+                          
+                      //$this->db->limit(10, 20);
+                      // Produces: LIMIT 20, 10 (in MySQL. Other databases have slightly different syntax)
+                        
+                         /*
+                            $query=$this->db->get_where($tb,array("UserName"=>$UserName, "Password"=>$Password ,"Unused"=>"N"  ));
+                            $check=$query->num_rows();
+                          */
+                          $strmax= $this->db->query("  SELECT   *    FROM    `tb_patient`   ");
+                          $max=$strmax->num_rows();
+                        
+                          $this->db->order_by("id_patient","DESC");
+                       //    $query = $this->db->get($tb,   $rows  );
+                          /*SELECT *
+FROM `tb_patient`
+LIMIT 90 , 30   */
+                           $query = $this->db->get($tb, 200  ,  $section  );  //100 คือจำนวนข้อมูลทั้้งหมด  
+                          
+                           
+                        
                         $rows=array();
                         foreach( $query->result() as $row  )
                         {

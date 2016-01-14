@@ -32,6 +32,7 @@
                 {field:'Name',title:'Name'},
                 {field:'Surname',title:'Lastname'},
                   {field:'Sex',title:'Sex'},
+                 
                 
             ]],
             fitColumns: true,

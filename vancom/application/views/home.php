@@ -37,21 +37,24 @@
                                      tools:'#t_patient'  ,
                                      closable:true ,
                                      maximizable:true ,
+                                     collapsible:true,
                                     "  
          style="width:450px;height:450px;padding:10px;">
         <!-- <p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p> -->
         
-            <table class="easyui-datagrid" style="width:400px;height:400px"
+            <table class="easyui-datagrid" style="width:420px;height:400px"
             data-options="url:'<?=base_url()?>index.php/welcome/dg_patient'
                                       ,fitColumns:true,
                                       singleSelect:true,
+                                      pagination: true  ,
+                                     rownumbers:true ,    
                                       columns:[[
                                           {  field:'Name',title:'Name' },
                                           {  field:'Surname',title:'Lastname' },
                                           {  field:'HN',title:'HN' },
                                           {  field:'BirthDate',title:'Birth Date' },
                                           {  field:'Sex',title:'Sex' },
-                                          
+                                          {field:'id_patient',title:'ID'},
                                       ]]
                                       "
             >
