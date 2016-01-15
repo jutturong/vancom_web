@@ -35,19 +35,20 @@
         <div class="menu-sep"></div>
         <div    onclick="javascript:$('#p_patient').panel('close')"  data-options=" iconCls:' icon-remove'   ">Close</div>
         
-        <!--
+        
         <div  >
-            <span>ลบ/แก้ไข</span>
+            <span>ค้นหาเพิ่มเติม</span>
             <div>
-                <div>แก้ไข/ลบ ประวัติผู้ป่วย</div>
-                <div class="menu-sep"></div>
-                <div>แก้ไข/ลบ ประวัติการรักษา</div>
-              
-                
-                <div>New Toolbar...</div>
+                <div onclick="$('#win_hn_sr').window('open')">ค้นหาจาก HN </div>
+                <!--<div class="menu-sep"></div>-->
+                <div>ค้นหาจาก ชื่อ</div>
+               <div class="menu-sep"></div>
+               <div>Vancomycin</div>
+               <div>Date</div>
+                <!--<div>New Toolbar...</div>-->
             </div>
         </div>
-        -->
+        
         
         <!--<div data-options="iconCls:'icon-remove'">Delete</div>
         <div>Select All</div>-->

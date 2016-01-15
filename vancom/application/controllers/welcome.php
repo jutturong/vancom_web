@@ -177,7 +177,31 @@ LIMIT 0 , 30
                  }
                  
                  
-                 
+                    public function  dg_patient_sr_HN() //ประวัติของผู้ป่วย
+                    {
+                         # http://127.0.0.1/vancom/index.php/welcome/dg_patient_sr_HN/HS1553
+                            $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม
+                            $tb="tb_patient";
+                            
+                               //   $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+                              //    $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+                                  
+                                     $hn=$this->uri->segment(3);
+                                     $this->db->like("HN",$hn);
+                                    $this->db->order_by("id_patient","DESC");
+                                   
+                                            $query = $this->db->get($tb, 100 );  //100 คือจำนวนข้อมูลทั้้งหมด  
+
+
+
+                                        $rows=array();
+                                        foreach( $query->result() as $row  )
+                                        {
+                                                $rows[]=$row;
+                                        }
+                                         echo json_encode($rows);
+                            
+                    }
                  
                  
                  
