@@ -41,7 +41,7 @@
             <div>
                 <div onclick="$('#win_hn_sr').window('open')">ค้นหาจาก HN </div>
                 <!--<div class="menu-sep"></div>-->
-                <div>ค้นหาจาก ชื่อ - นามสกุล</div>
+                <div onclick="$('#win_name_sr').window('open')">ค้นหาจาก ชื่อ - นามสกุล</div>
                <div class="menu-sep"></div>
                <div>Vancomycin</div>
                <div>Date</div>

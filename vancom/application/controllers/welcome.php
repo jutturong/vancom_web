@@ -177,7 +177,7 @@ LIMIT 0 , 30
                  }
                  
                  
-                    public function  dg_patient_sr_HN() //ประวัติของผู้ป่วย
+                    public function  dg_patient_sr_HN() //ประวัติของผู้ป่วย จาก HN
                     {
                          # http://127.0.0.1/vancom/index.php/welcome/dg_patient_sr_HN/HS1553
                             $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม
@@ -192,7 +192,7 @@ LIMIT 0 , 30
                                      $this->db->like("HN",$hn);
                                     $this->db->order_by("id_patient","DESC");
                                    
-                                            $query = $this->db->get($tb, 100 );  //100 คือจำนวนข้อมูลทั้้งหมด  
+                                            $query = $this->db->get($tb, 5 );  //100 คือจำนวนข้อมูลทั้้งหมด  
 
 
 
@@ -204,6 +204,35 @@ LIMIT 0 , 30
                                          echo json_encode($rows);
                             
                     }
+                    
+                    
+                   public function  dg_patient_sr_NAME() //ประวัติของผู้ป่วย จาก HN
+                    {
+                         # http://127.0.0.1/vancom/index.php/welcome/dg_patient_sr_NAME/
+                       //echo'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';     
+                       $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม                      
+                            $tb="tb_patient";
+                            
+                               //   $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+                              //    $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+                                  
+                                     $Name=$this->uri->segment(3);
+                                     $this->db->like("Name",$Name);
+                                    $this->db->order_by("id_patient","DESC");
+                                   
+                                            $query = $this->db->get($tb, 5 );  //100 คือจำนวนข้อมูลทั้้งหมด  
+
+                                        $rows=array();
+                                        foreach( $query->result() as $row  )
+                                        {
+                                                $rows[]=$row;
+                                        }
+                                         echo json_encode($rows);
+                            
+                    }  
+                    
+                    
+                 
                  
                  
                  
@@ -281,6 +310,22 @@ LIMIT 90 , 30   */
                         }
                          echo json_encode($rows);
                  }
+                 public function cmb_name()//ค้น name ของผู้ป่วย
+                 {
+                     //http://127.0.0.1/vancom/index.php/welcome/cmb_name
+                       $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม
+                       $q = isset($_POST['q']) ? strval($_POST['q']) : '';
+                        $tb="tb_patient";
+                        $this->db->like("Name",$q);
+                        $query = $this->db->get($tb, 10, 0);
+                        $rows=array();
+                         foreach( $query->result() as $row  )
+                        {
+                                $rows[]=$row;
+                        }
+                         echo json_encode($rows);
+                 }
+                 
                 
                          
 }
