@@ -181,6 +181,8 @@ LIMIT 0 , 30
                     {
                          # http://127.0.0.1/vancom/index.php/welcome/dg_patient_sr_HN/HS1553
                             $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม
+                            
+                            
                             $tb="tb_patient";
                             
                                //   $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
