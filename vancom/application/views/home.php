@@ -55,7 +55,7 @@
             idField: 'itemid',
             textField: '',
             mode:'remote',
-            idField:'Name',
+            idField:'id_patient',
             url: '<?=base_url()?>index.php/welcome/cmb_name/',
             method: 'post',
             columns: [[
@@ -82,9 +82,12 @@
                                                          
                                     var   name_sr= $('#name_sr').combogrid('getValue');     
                                 
-                                      $('#p_patient').panel('open');
+                                    $('#p_patient').panel('open');
                                     $('#dg_patient').datagrid({
-                                        url:'<?=base_url()?>index.php/welcome/dg_patient_sr_NAME/' +  name_sr    ,
+                                       // url:'<?=base_url()?>index.php/welcome/dg_patient/' +  name_sr   ,
+                                      url:'<?=base_url()?>index.php/welcome/sr_NAME/' +  name_sr   ,  
+                                       
+                                        
                                       fitColumns:true,
                                       singleSelect:true,
                                       pagination: true  ,

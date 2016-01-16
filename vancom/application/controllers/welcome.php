@@ -206,21 +206,23 @@ LIMIT 0 , 30
                     }
                     
                     
-                   public function  dg_patient_sr_NAME() //ประวัติของผู้ป่วย จาก HN
+                   public function  sr_NAME() //ประวัติของผู้ป่วย จาก HN
                     {
                          # http://127.0.0.1/vancom/index.php/welcome/dg_patient_sr_NAME/
                        //echo'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';     
-                       $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม                      
+                    //   $this->authentication->check_authentication(); //ใช้สำหรับการ authentication login เข้าสู่โปรแกรม                      
                             $tb="tb_patient";
                             
                                //   $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
                               //    $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
-                                  
-                                     $Name=$this->uri->segment(3);
-                                     $this->db->like("Name",$Name);
+
+                                     $id_patient=$this->uri->segment(3);
+                                   //  $this->db->like("id_patient", $$id_patient);
                                     $this->db->order_by("id_patient","DESC");
                                    
-                                            $query = $this->db->get($tb, 5 );  //100 คือจำนวนข้อมูลทั้้งหมด  
+                                           // $query = $this->db->get_where($tb,array("id_patient",$id_patient) );  //100 คือจำนวนข้อมูลทั้้งหมด  
+                                    
+                                    $query=$this->db->get_where($tb,array("id_patient"=>$id_patient),5);
 
                                         $rows=array();
                                         foreach( $query->result() as $row  )
